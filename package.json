@@ -1,0 +1,18 @@
+{
+  "name": "1dv610-l3",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackanlnu/1DV610-L3.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackanlnu/1DV610-L3/issues"
+  },
+  "homepage": "https://github.com/jackanlnu/1DV610-L3#readme"
+}
