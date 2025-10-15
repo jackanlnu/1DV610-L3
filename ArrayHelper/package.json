@@ -1,0 +1,21 @@
+{
+  "name": "js-array-helper",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackanlnu/1DV610-L2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackanlnu/1DV610-L2/issues"
+  },
+  "homepage": "https://github.com/jackanlnu/1DV610-L2#readme",
+  "description": ""
+}
