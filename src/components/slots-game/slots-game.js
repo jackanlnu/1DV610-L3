@@ -56,5 +56,9 @@ customElements.define('slots-game',
     connectedCallback(){
 
     }
+
+    #spin(){
+      
+    }
   }
 )
