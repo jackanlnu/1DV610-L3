@@ -62,14 +62,28 @@ customElements.define('slots-game',
 
       this.#button = this.shadowRoot.querySelector('button')
       this.#slots = this.shadowRoot.querySelectorAll('.slot')
+
+      this.#slotDisplayItems = [1, 1, 1, 2, 3, 4]
     }
 
     connectedCallback(){
-      this.#button.addEventListener('click', this.#spin)
+      this.#button.addEventListener('click', () => this.#spin())
     }
 
     #spin(){
-
+      this.#button.disabled = true;
+      for (let i = 0; i < this.#slots.length; i++) {
+        this.#slots[i].innerHTML = ''
+      }
+      for (let i = 0; i < this.#slots.length; i++) {
+        setTimeout(() => {
+          this.#slots[i].innerHTML = helper.getRandom(this.#slotDisplayItems)
+          if (i === this.#slots.length - 1) {
+            this.#button.disabled = false;
+          }
+        }
+        , 1000 * (i + 1));
+      }
     }
   }
 )
