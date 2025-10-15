@@ -49,6 +49,12 @@ customElements.define('slots-game',
 
       this.attachShadow({ mode: 'open' })
         .appendChild(template.content.cloneNode(true))
+
+      
+    }
+
+    connectedCallback(){
+
     }
   }
 )
