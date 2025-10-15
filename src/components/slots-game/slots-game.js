@@ -38,9 +38,9 @@ template.innerHTML = `
   <div class="container">
     <h1>Slot Game</h1>
     <main>
-      <div class="slot1"></div>
-      <div class="slot2"></div>
-      <div class="slot3"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
     </main>
     <button>Spin</button>
   </div>
@@ -51,9 +51,7 @@ customElements.define('slots-game',
 
     #button
 
-    #slot1
-    #slot2
-    #slot3
+    #slots
 
     #slotDisplayItems
     constructor () {
@@ -63,9 +61,7 @@ customElements.define('slots-game',
         .appendChild(template.content.cloneNode(true))
 
       this.#button = this.shadowRoot.querySelector('button')
-      this.#slot1 = this.shadowRoot.querySelector('.slot1')
-      this.#slot1 = this.shadowRoot.querySelector('.slot2')
-      this.#slot1 = this.shadowRoot.querySelector('.slot3')
+      this.#slots = this.shadowRoot.querySelectorAll('.slot')
     }
 
     connectedCallback(){
