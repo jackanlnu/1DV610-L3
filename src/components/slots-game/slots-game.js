@@ -44,21 +44,22 @@ template.innerHTML = `
 
 customElements.define('slots-game',
   class extends HTMLElement {
+    #button
     constructor () {
       super()
 
       this.attachShadow({ mode: 'open' })
         .appendChild(template.content.cloneNode(true))
 
-      
+      this.#button = this.shadowRoot.querySelector('button')
     }
 
     connectedCallback(){
-
+      this.#button.addEventListener('click', this.#spin)
     }
 
     #spin(){
-      
+
     }
   }
 )
