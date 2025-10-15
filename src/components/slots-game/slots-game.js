@@ -44,7 +44,10 @@ template.innerHTML = `
 
 customElements.define('slots-game',
   class extends HTMLElement {
+
     #button
+
+    #slotDisplayItems
     constructor () {
       super()
 
