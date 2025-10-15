@@ -7,14 +7,18 @@ template.innerHTML = `
   <style>
     h1{
       width: fit-content;
+      font-size: 8vw;
+      margin: 0;
     }
     .container{
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 5%;
+      padding: 1em 0;
       border: solid 2px black;
       width: 90vw;
-      height: 90vw;
+      height: 50vw;
       background-color: aquamarine;
     }
     main{
@@ -24,15 +28,26 @@ template.innerHTML = `
       justify-content: center;
       gap: 5vw;
       width: 90%;
-      height: 30%;
+      height: 70%;
       border: solid 2px black;
       border-radius: 2em;
       background-color: azure;
     }
     .slot{
+      display: flex;
       width: 25%;
       height: 75%;
       background-color: grey;
+      font-size: 10vw;
+      align-items: center;
+      justify-content: center;
+    }
+    button{
+      width: 15%;
+      height: 20%;
+      border-radius: 50%;
+      font-size: 4vw;
+      background-color: red;
     }
   </style>
   <div class="container">
