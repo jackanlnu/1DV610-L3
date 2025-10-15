@@ -1,3 +1,7 @@
+import { arrayHelper} from "../../../arrayHelper/index.js";
+
+const helper = new arrayHelper();
+
 const template = document.createElement('template')
 template.innerHTML = `
   <style>
