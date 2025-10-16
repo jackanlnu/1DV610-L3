@@ -29,7 +29,7 @@ customElements.define('game-center',
     }
 
     #addWin(event){
-      
+      localStorage.setItem('game-center-coins', JSON.parse(localStorage.getItem('game-center-coins')) + event.detail.amount)
     }
   }
 )
