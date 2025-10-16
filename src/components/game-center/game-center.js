@@ -21,6 +21,8 @@ customElements.define('game-center',
 
     connectedCallback(){
       this.#container.appendChild(this.#slotsGame)
+
+      this.#slotsGame.addEventListener('win', () => this.#addWin())
     }
   }
 )
