@@ -23,6 +23,9 @@ customElements.define('game-center',
       this.#container.appendChild(this.#slotsGame)
 
       this.#slotsGame.addEventListener('win', () => this.#addWin())
+      if (!localStorage.getItem('game-center-coins')) {
+        localStorage.setItem('game-center-coins', JSON.stringify(100))
+      }
     }
 
     #addWin(){
