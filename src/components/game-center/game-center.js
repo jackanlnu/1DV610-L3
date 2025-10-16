@@ -2,7 +2,12 @@ import '../slots-game/index.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
-  <div class="container"></div>
+  <div class="container">
+    <header>
+      <p class="userNameDisplay"></p>
+      <p class="coinsDisplay"></p>
+    </header>
+  </div>
 `
 
 customElements.define('game-center',
