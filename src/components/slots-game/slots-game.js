@@ -94,11 +94,19 @@ customElements.define('slots-game',
         setTimeout(() => {
           this.#slots[i].innerHTML = helper.getRandom(this.#slotDisplayItems)
           if (i === this.#slots.length - 1) {
-            this.#button.disabled = false;
+            this.#button.disabled = false
+            this.dispatchEvent(new CustomEvent('win', {
+              bubbles: true,
+              composed: true,
+              detail: {
+                amount: 100
+              }
+            }))
           }
         }
         , 1000 * (i + 1));
       }
+
     }
   }
 )
