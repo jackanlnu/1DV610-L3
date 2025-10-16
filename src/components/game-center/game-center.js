@@ -14,5 +14,9 @@ customElements.define('game-center',
 
       this.#container = this.querySelector('.container')
     }
+
+    connectedCallback(){
+      this.#container.appendChild()
+    }
   }
 )
