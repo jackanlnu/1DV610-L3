@@ -24,5 +24,9 @@ customElements.define('game-center',
 
       this.#slotsGame.addEventListener('win', () => this.#addWin())
     }
+
+    #addWin(){
+      
+    }
   }
 )
