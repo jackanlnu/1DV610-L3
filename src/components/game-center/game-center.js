@@ -13,6 +13,8 @@ template.innerHTML = `
 customElements.define('game-center',
   class extends HTMLElement {
     #container
+    #userNameDisplay
+    #coinsDisplay
     #slotsGame
     constructor () {
       super()
@@ -21,6 +23,9 @@ customElements.define('game-center',
         .appendChild(template.content.cloneNode(true))
 
       this.#container = this.shadowRoot.querySelector('.container')
+      this.#userNameDisplay = this.shadowRoot.querySelector('.userNameDisplay')
+      this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
+
       this.#slotsGame = document.createElement('slots-game')
     }
 
