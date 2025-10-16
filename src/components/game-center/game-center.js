@@ -47,7 +47,7 @@ customElements.define('game-center',
     }
 
     connectedCallback(){
-      this.#container.appendChild(this.#slotsGame)
+      this.#main.appendChild(this.#slotsGame)
 
       this.#updateCoinsDisplay()
 
