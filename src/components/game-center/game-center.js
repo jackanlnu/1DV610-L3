@@ -29,6 +29,8 @@ customElements.define('game-center',
     #container
     #userNameDisplay
     #coinsDisplay
+    #main
+
     #slotsGame
     constructor () {
       super()
@@ -39,6 +41,7 @@ customElements.define('game-center',
       this.#container = this.shadowRoot.querySelector('.container')
       this.#userNameDisplay = this.shadowRoot.querySelector('.userNameDisplay')
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
+      this.#main = this.shadowRoot.querySelector('main')
 
       this.#slotsGame = document.createElement('slots-game')
     }
