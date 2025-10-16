@@ -10,12 +10,17 @@ template.innerHTML = `
       border: solid 1px black;
       padding: 1em;
     }
+    main{
+      width: 90%;
+      height: 90%;
+    }
   </style>
   <div class="container">
     <header>
       <p class="userNameDisplay"></p>
       <p class="coinsDisplay"></p>
     </header>
+    <main></main>
   </div>
 `
 
