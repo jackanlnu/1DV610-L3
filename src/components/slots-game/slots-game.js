@@ -95,18 +95,28 @@ customElements.define('slots-game',
           this.#slots[i].innerHTML = helper.getRandom(this.#slotDisplayItems)
           if (i === this.#slots.length - 1) {
             this.#button.disabled = false
-            this.dispatchEvent(new CustomEvent('win', {
-              bubbles: true,
-              composed: true,
-              detail: {
-                amount: 100
-              }
-            }))
+            if(this.#checkIfWin()){
+              this.dispatchEvent(new CustomEvent('win', {
+                bubbles: true,
+                composed: true,
+                detail: {
+                  amount: 100
+                }
+              }))
+            }
           }
         }
         , 1000 * (i + 1));
       }
+    }
 
+    #checkIfWin(){
+      if(this.#slots[0].innerHTML === this.#slots[1].innerHTML && this.#slots[1].innerHTML  === this.#slots[2].innerHTML){
+        return true
+      }
+      else{
+        return false
+      }
     }
   }
 )
