@@ -11,8 +11,8 @@ template.innerHTML = `
       padding: 1em;
     }
     main{
-      width: 90%;
-      height: 90%;
+      width: 70vw;
+      height: 40vw;
     }
   </style>
   <div class="container">
