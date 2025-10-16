@@ -2,6 +2,15 @@ import '../slots-game/index.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
+  <style>
+    .container{
+      margin: 0;
+      width: 90%;
+      height: 90%;
+      border: solid 1px black;
+      padding: 1em;
+    }
+  </style>
   <div class="container">
     <header>
       <p class="userNameDisplay"></p>
