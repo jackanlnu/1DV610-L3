@@ -52,7 +52,12 @@ customElements.define('game-center',
     }
 
     #displayNewUserForm(){
-      
+      const newUserForm = document.createElement('form')
+      newUserForm.innerHTML = `
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
+      `
+      newUserForm.addEventListener('submit', (e) => this.submit(e))
     }
 
     #displayHome(){
