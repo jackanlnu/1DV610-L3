@@ -1,7 +1,16 @@
 const template = document.createElement('template')
 template.innerHTML = `
-  <style></style>
-  <div class="container"></div>
+  <style>
+    .container{
+      display: grid;
+    }
+  </style>
+  <div class="container">
+    <button id=""></button>
+    <button id=""></button>
+    <button id=""></button>
+    <button id=""></button>
+  </div>
 `
 
 customElements.define('gameCenter-home',
