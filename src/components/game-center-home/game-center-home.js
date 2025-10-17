@@ -1,4 +1,4 @@
-import { template } from "./game-center-home-template"
+import { template } from "./game-center-home-template.js"
 
 customElements.define('game-center-home',
   class extends HTMLElement {
