@@ -61,6 +61,10 @@ customElements.define('game-center',
     }
 
     #changeDisplay(){
+
+    }
+
+    #displayHome(){
       
     }
 
