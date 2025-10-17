@@ -92,7 +92,7 @@ customElements.define('game-center',
     }
 
     #updateCoinsDisplay(){
-      this.#coinsDisplay.textContent = localStorage.getItem('game-center-coins')
+      this.#coinsDisplay.textContent = 'Coins: ' + localStorage.getItem('game-center-coins')
     }
 
     #updateUsernameDisplay(){
