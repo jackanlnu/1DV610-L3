@@ -60,7 +60,12 @@ customElements.define('game-center',
         <input type="text" name="name">
         <input type="submit" value="Submit">
       `
-      newUserForm.addEventListener('submit', (e) => this.submit(e))
+      newUserForm.addEventListener('submit', (event) => this.#submitNewUser(event))
+      this.#main.appendChild(newUserForm)
+    }
+
+    #submitNewUser(event){
+
     }
 
     #displayHome(){
