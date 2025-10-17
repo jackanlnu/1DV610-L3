@@ -34,8 +34,6 @@ customElements.define('game-center',
     #userNameDisplay
     #coinsDisplay
     #main
-
-    #slotsGame
     constructor () {
       super()
 
@@ -46,8 +44,6 @@ customElements.define('game-center',
       this.#userNameDisplay = this.shadowRoot.querySelector('.userNameDisplay')
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
       this.#main = this.shadowRoot.querySelector('main')
-
-      this.#slotsGame = document.createElement('slots-game')
     }
 
     connectedCallback(){
@@ -55,7 +51,6 @@ customElements.define('game-center',
 
       this.#updateCoinsDisplay()
 
-      this.#slotsGame.addEventListener('win', (event) => this.#addWin(event))
       if (!localStorage.getItem('game-center-coins')) {
         localStorage.setItem('game-center-coins', JSON.stringify(100))
       }
@@ -84,7 +79,10 @@ customElements.define('game-center',
     }
 
     #displaySlots(){
-      
+      this.clearElement(this.#main)
+      const slotsGame = document.createElement('slots-game')
+      slotsGame.addEventListener('win', (event) => this.#addWin(event))
+      this.#main.appendChild(slotsGame)
     }
 
     #addWin(event){
