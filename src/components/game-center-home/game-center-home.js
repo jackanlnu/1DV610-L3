@@ -13,7 +13,7 @@ template.innerHTML = `
   </div>
 `
 
-customElements.define('gameCenter-home',
+customElements.define('game-center-home',
   class extends HTMLElement {
     constructor () {
       super()

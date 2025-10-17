@@ -1,5 +1,5 @@
 import '../slots-game/index.js'
-import '../gameCenter-home/index.js'
+import '../game-center-home/index.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -51,7 +51,7 @@ customElements.define('game-center',
     }
 
     connectedCallback(){
-      this.#main.appendChild(this.#slotsGame)
+      this.#displayHome()
 
       this.#updateCoinsDisplay()
 
@@ -78,7 +78,8 @@ customElements.define('game-center',
 
     #displayHome(){
       this.clearElement(this.#main)
-      this.#main.appendChild(document.createElement('gameCenter-home'))
+      const home = document.createElement('game-center-home')
+      this.#main.appendChild(home)
     }
 
     #displaySlots(){
