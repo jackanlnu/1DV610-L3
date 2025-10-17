@@ -51,6 +51,10 @@ customElements.define('game-center',
       }
     }
 
+    #displayNewUserForm(){
+      
+    }
+
     #displayHome(){
       this.#returnHomeButton.hidden = true
       const home = document.createElement('game-center-home')
