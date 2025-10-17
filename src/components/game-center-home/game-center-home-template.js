@@ -13,9 +13,9 @@ template.innerHTML = `
   </style>
   <div class="container">
     <button id="slots-game">Slots game</button>
-    <button id=""></button>
-    <button id=""></button>
-    <button id=""></button>
+    <button id="">Coming soon</button>
+    <button id="">Coming soon</button>
+    <button id="">Coming soon</button>
   </div>
 `
 
