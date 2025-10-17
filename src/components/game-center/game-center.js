@@ -4,15 +4,18 @@ const template = document.createElement('template')
 template.innerHTML = `
   <style>
     .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin: 0;
-      width: 90%;
-      height: 90%;
+      width: 70vw;
+      height: 50vw;
       border: solid 1px black;
       padding: 1em;
     }
     main{
-      width: 70vw;
-      height: 40vw;
+      width: 80%;
+      height: 70%;
     }
   </style>
   <div class="container">

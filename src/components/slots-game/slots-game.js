@@ -17,8 +17,8 @@ template.innerHTML = `
       gap: 5%;
       padding: 1em 0;
       border: solid 2px black;
-      width: 90%;
-      height: 90%;
+      width: 100%;
+      height: 100%;
       background-color: aquamarine;
     }
     main{
@@ -46,7 +46,7 @@ template.innerHTML = `
       width: 15%;
       height: 20%;
       border-radius: 50%;
-      font-size: 4vw;
+      font-size: 3vw;
       background-color: red;
     }
   </style>
