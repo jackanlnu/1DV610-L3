@@ -15,11 +15,14 @@ template.innerHTML = `
 
 customElements.define('game-center-home',
   class extends HTMLElement {
+    #slotsButton
     constructor () {
       super()
 
       this.attachShadow({ mode: 'open' })
         .appendChild(template.content.cloneNode(true))
+
+      this.#slotsButton = this.shadowRoot.getElementById('slots-game')
     }
   }
 )
