@@ -30,6 +30,7 @@ customElements.define('game-center',
         this.#displayHome()
       }
       this.#updateCoinsDisplay()
+      this.#updateUsernameDisplay()
 
       this.#returnHomeButton.addEventListener('click', () => this.#changeDisplay('home'))
 
