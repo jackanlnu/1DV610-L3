@@ -1,4 +1,5 @@
 import '../slots-game/index.js'
+import '../gameCenter-home/index.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -76,7 +77,8 @@ customElements.define('game-center',
     }
 
     #displayHome(){
-      
+      this.clearElement(this.#main)
+      this.#main.appendChild(document.createElement('gameCenter-home'))
     }
 
     #displaySlots(){
