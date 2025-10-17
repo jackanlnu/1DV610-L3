@@ -57,7 +57,7 @@ customElements.define('game-center',
     #displayNewUserForm(){
       const newUserForm = document.createElement('form')
       newUserForm.innerHTML = `
-        <input type="text" name="name">
+        <input type="text" name="username">
         <input type="submit" value="Submit">
       `
       newUserForm.addEventListener('submit', (event) => this.#submitNewUser(event))
@@ -65,7 +65,9 @@ customElements.define('game-center',
     }
 
     #submitNewUser(event){
-
+      event.preventDefault()
+      const data = new FormData(event.target)
+      localStorage.setItem('game-center-username', JSON.stringify([...data.entries()][0][1]))
     }
 
     #displayHome(){
