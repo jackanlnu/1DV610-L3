@@ -1,67 +1,8 @@
 import { arrayHelper} from "../../../arrayHelper/index.js";
 
-const helper = new arrayHelper();
+import { template } from "./slots-game-template.js";
 
-const template = document.createElement('template')
-template.innerHTML = `
-  <style>
-    h1{
-      width: fit-content;
-      font-size: 8vw;
-      margin: 0;
-    }
-    .container{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5%;
-      padding: 1em 0;
-      border: solid 2px black;
-      width: 100%;
-      height: 100%;
-      background-color: aquamarine;
-      border-radius: 0.5em;
-    }
-    main{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 5vw;
-      width: 90%;
-      height: 70%;
-      border: solid 2px black;
-      border-radius: 2em;
-      background-color: azure;
-    }
-    .slot{
-      display: flex;
-      width: 25%;
-      height: 75%;
-      background-color: grey;
-      font-size: 10vw;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.5em;
-    }
-    button{
-      width: 15%;
-      height: 20%;
-      border-radius: 50%;
-      font-size: 3vw;
-      background-color: red;
-    }
-  </style>
-  <div class="container">
-    <h1>Slot Game</h1>
-    <main>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </main>
-    <button>Spin</button>
-  </div>
-`
+const helper = new arrayHelper();
 
 customElements.define('slots-game',
   class extends HTMLElement {
