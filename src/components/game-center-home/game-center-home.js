@@ -26,7 +26,17 @@ customElements.define('game-center-home',
     }
 
     connectedCallback(){
-      this.#slotsButton.addEventListener('click', (event) => this.#sendEvent(event))
+      this.#slotsButton.addEventListener('click', () => this.#sendEvent('slots-game'))
+    }
+
+    #sendEvent(eventInfo){
+      this.dispatchEvent(new CustomEvent('changeDisplay', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          displayElement: eventInfo
+        }
+      }))
     }
   }
 )
