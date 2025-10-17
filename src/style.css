@@ -1,8 +1,7 @@
 body{
   display: flex;
   justify-content: center;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
+  margin: 3vw 0;
+  height: fit-content;
   background-color: aqua;
 }
