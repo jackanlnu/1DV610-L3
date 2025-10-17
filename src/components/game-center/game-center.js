@@ -24,8 +24,11 @@ customElements.define('game-center',
     }
 
     connectedCallback(){
-      this.#displayHome()
-
+      if(!localStorage.getItem('game-center-username')) {
+        this.#displayNewUserForm()
+      } else {
+        this.#displayHome()
+      }
       this.#updateCoinsDisplay()
 
       this.#returnHomeButton.addEventListener('click', () => this.#changeDisplay('home'))
