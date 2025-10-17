@@ -14,6 +14,11 @@ template.innerHTML = `
       border: solid 1px black;
       padding: 1em;
     }
+    header{
+      display: flex;
+      flex-direction: row;
+      gap: 2vw;
+    }
     main{
       width: 80%;
       height: 70%;
@@ -21,7 +26,8 @@ template.innerHTML = `
   </style>
   <div class="container">
     <header>
-      <p class="userNameDisplay"></p>
+      <button hidden id="returnHomeButton">Return</button>
+      <p class="userNameDisplay">Test</p>
       <p class="coinsDisplay"></p>
     </header>
     <main></main>
