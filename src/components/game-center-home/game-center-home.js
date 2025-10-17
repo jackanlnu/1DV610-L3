@@ -24,5 +24,9 @@ customElements.define('game-center-home',
 
       this.#slotsButton = this.shadowRoot.getElementById('slots-game')
     }
+
+    connectedCallback(){
+      this.#slotsButton.addEventListener('click', (event) => this.#sendEvent(event))
+    }
   }
 )
