@@ -67,7 +67,7 @@ customElements.define('game-center',
           this.#displayHome()
           break;
 
-        case 'home':
+        case 'slots-game':
           this.#displaySlots()
           break;
       
@@ -79,6 +79,7 @@ customElements.define('game-center',
     #displayHome(){
       this.clearElement(this.#main)
       const home = document.createElement('game-center-home')
+      home.addEventListener('changeDisplay', (event) => this.#changeDisplay(event.detail.displayElement))
       this.#main.appendChild(home)
     }
 
