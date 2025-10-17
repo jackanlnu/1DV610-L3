@@ -37,6 +37,7 @@ template.innerHTML = `
 customElements.define('game-center',
   class extends HTMLElement {
     #container
+    #returnHomeButton
     #userNameDisplay
     #coinsDisplay
     #main
@@ -47,6 +48,7 @@ customElements.define('game-center',
         .appendChild(template.content.cloneNode(true))
 
       this.#container = this.shadowRoot.querySelector('.container')
+      this.#returnHomeButton = this.shadowRoot.getElementById('returnHomeButton')
       this.#userNameDisplay = this.shadowRoot.querySelector('.userNameDisplay')
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
       this.#main = this.shadowRoot.querySelector('main')
