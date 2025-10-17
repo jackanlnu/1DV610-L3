@@ -69,6 +69,7 @@ customElements.define('game-center',
       event.preventDefault()
       const data = new FormData(event.target)
       localStorage.setItem('game-center-username', JSON.stringify([...data.entries()][0][1]))
+      this.#changeDisplay('home')
     }
 
     #displayHome(){
@@ -95,7 +96,7 @@ customElements.define('game-center',
     }
 
     #updateUsernameDisplay(){
-      this.#userNameDisplay.textContent = localStorage.getItem('game-center-username')
+      this.#userNameDisplay.textContent = JSON.parse(localStorage.getItem('game-center-username'))
     }
 
     clearElement (element) {
