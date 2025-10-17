@@ -91,5 +91,11 @@ customElements.define('game-center',
     #updateCoinsDisplay(){
       this.#coinsDisplay.textContent = localStorage.getItem('game-center-coins')
     }
+
+    clearElement (element) {
+      while (element.firstChild) {
+        element.removeChild(element.lastChild)
+      }
+    }
   }
 )
