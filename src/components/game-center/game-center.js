@@ -59,6 +59,8 @@ customElements.define('game-center',
 
       this.#updateCoinsDisplay()
 
+      this.#returnHomeButton.addEventListener('click', () => this.#changeDisplay('home'))
+
       if (!localStorage.getItem('game-center-coins')) {
         localStorage.setItem('game-center-coins', JSON.stringify(100))
       }
@@ -81,6 +83,7 @@ customElements.define('game-center',
 
     #displayHome(){
       this.clearElement(this.#main)
+      this.#returnHomeButton.hidden = true
       const home = document.createElement('game-center-home')
       home.addEventListener('changeDisplay', (event) => this.#changeDisplay(event.detail.displayElement))
       this.#main.appendChild(home)
@@ -88,6 +91,7 @@ customElements.define('game-center',
 
     #displaySlots(){
       this.clearElement(this.#main)
+      this.#returnHomeButton.hidden = false
       const slotsGame = document.createElement('slots-game')
       slotsGame.addEventListener('win', (event) => this.#addWin(event))
       this.#main.appendChild(slotsGame)
