@@ -20,6 +20,7 @@ template.innerHTML = `
       width: 100%;
       height: 100%;
       background-color: aquamarine;
+      border-radius: 0.5em;
     }
     main{
       display: flex;
@@ -41,6 +42,7 @@ template.innerHTML = `
       font-size: 10vw;
       align-items: center;
       justify-content: center;
+      border-radius: 0.5em;
     }
     button{
       width: 15%;
