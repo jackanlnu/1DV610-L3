@@ -6,7 +6,7 @@ template.innerHTML = `
     }
   </style>
   <div class="container">
-    <button id=""></button>
+    <button id="slots-game">Slots game</button>
     <button id=""></button>
     <button id=""></button>
     <button id=""></button>
