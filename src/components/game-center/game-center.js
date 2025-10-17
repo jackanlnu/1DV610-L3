@@ -60,8 +60,19 @@ customElements.define('game-center',
       }
     }
 
-    #changeDisplay(){
+    #changeDisplay(destination){
+      switch (destination) {
+        case 'home':
+          this.#displayHome()
+          break;
 
+        case 'home':
+          this.#displaySlots()
+          break;
+      
+        default:
+          break;
+      }
     }
 
     #displayHome(){
