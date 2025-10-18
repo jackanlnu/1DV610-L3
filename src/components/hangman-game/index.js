@@ -1,1 +1,0 @@
-import './hangman-game.js'
