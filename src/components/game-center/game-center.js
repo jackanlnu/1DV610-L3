@@ -10,6 +10,7 @@ customElements.define('game-center',
     #userNameDisplay
     #coinsDisplay
     #main
+
     constructor () {
       super()
 
@@ -47,7 +48,7 @@ customElements.define('game-center',
           break;
 
         case 'slots-game':
-          this.#displaySlots()
+          this.#displaySlotsgame()
           break;
       
         default:
@@ -61,11 +62,11 @@ customElements.define('game-center',
         <input type="text" name="username">
         <input type="submit" value="Submit">
       `
-      newUserForm.addEventListener('submit', (event) => this.#submitNewUser(event))
+      newUserForm.addEventListener('submit', (event) => this.#submitNewUsername(event))
       this.#main.appendChild(newUserForm)
     }
 
-    #submitNewUser(event){
+    #submitNewUsername(event){
       event.preventDefault()
       const data = new FormData(event.target)
       localStorage.setItem('game-center-username', JSON.stringify([...data.entries()][0][1]))
@@ -79,7 +80,7 @@ customElements.define('game-center',
       this.#main.appendChild(home)
     }
 
-    #displaySlots(){
+    #displaySlotsgame(){
       this.#returnHomeButton.hidden = false
       const slotsGame = document.createElement('slots-game')
       slotsGame.addEventListener('win', (event) => this.#addWin(event))
