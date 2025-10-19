@@ -6,7 +6,6 @@ const helper = new arrayHelper();
 
 customElements.define('slots-game',
   class extends HTMLElement {
-
     #button
 
     #slots
@@ -25,10 +24,10 @@ customElements.define('slots-game',
     }
 
     connectedCallback(){
-      this.#button.addEventListener('click', () => this.#spin())
+      this.#button.addEventListener('click', () => this.#spinSlots())
     }
 
-    #spin(){
+    #spinSlots(){
       this.#button.disabled = true;
       for (let i = 0; i < this.#slots.length; i++) {
         this.#slots[i].innerHTML = ''
