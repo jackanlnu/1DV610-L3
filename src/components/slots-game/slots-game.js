@@ -1,4 +1,4 @@
-import { arrayHelper} from "../../../arrayHelper/index.js";
+import { arrayHelper} from "../../arrayHelper/index.js";
 
 import { template } from "./slots-game-template.js";
 
