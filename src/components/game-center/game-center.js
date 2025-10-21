@@ -30,14 +30,14 @@ customElements.define('game-center',
       } else {
         this.#displayHome()
       }
-      this.#updateCoinsDisplay()
-      this.#updateUsernameDisplay()
 
       this.#returnHomeButton.addEventListener('click', () => this.#changeDisplay('home'))
 
       if (!localStorage.getItem('game-center-coins')) {
         localStorage.setItem('game-center-coins', JSON.stringify(100))
       }
+      this.#updateCoinsDisplay()
+      this.#updateUsernameDisplay()
     }
 
     #changeDisplay(destination){
@@ -70,6 +70,7 @@ customElements.define('game-center',
       event.preventDefault()
       const data = new FormData(event.target)
       localStorage.setItem('game-center-username', JSON.stringify([...data.entries()][0][1]))
+      this.#updateUsernameDisplay()
       this.#changeDisplay('home')
     }
 
