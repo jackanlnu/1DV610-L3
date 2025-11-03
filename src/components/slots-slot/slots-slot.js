@@ -3,6 +3,7 @@ import { template } from "./slots-game-template.js";
 customElements.define('slots-slot',
   class extends HTMLElement {
     #slot
+    #odds
     constructor () {
       super()
 
@@ -10,6 +11,8 @@ customElements.define('slots-slot',
         .appendChild(template.content.cloneNode(true))
 
       this.#slot = this.shadowRoot.getElementById('slot')
+
+      this.#odds = [1, 1, 1, 2, 3,]
     }
   }
 )
