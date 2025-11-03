@@ -9,8 +9,6 @@ customElements.define('slots-game',
     #button
 
     #slots
-
-    #slotDisplayItems
     constructor () {
       super()
 
@@ -18,9 +16,6 @@ customElements.define('slots-game',
         .appendChild(template.content.cloneNode(true))
 
       this.#button = this.shadowRoot.querySelector('button')
-      this.#slots = this.shadowRoot.querySelectorAll('.slot')
-
-      this.#slotDisplayItems = [1, 1, 1, 2, 3, 4]
     }
 
     connectedCallback(){
