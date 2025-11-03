@@ -8,7 +8,7 @@ customElements.define('slots-game',
   class extends HTMLElement {
     #button
 
-    #slots
+    #slots = []
     constructor () {
       super()
 
@@ -16,6 +16,10 @@ customElements.define('slots-game',
         .appendChild(template.content.cloneNode(true))
 
       this.#button = this.shadowRoot.querySelector('button')
+
+      for (let i = 0; i < 3; i++) {
+        this.#slots.push(document.createElement('slots-slot')) 
+      }
     }
 
     connectedCallback(){

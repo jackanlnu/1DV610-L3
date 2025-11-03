@@ -30,16 +30,6 @@ template.innerHTML = `
       border-radius: 2em;
       background-color: azure;
     }
-    .slot{
-      display: flex;
-      width: 25%;
-      height: 75%;
-      background-color: grey;
-      font-size: 10vw;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.5em;
-    }
     button{
       width: 15%;
       height: 20%;
@@ -50,11 +40,7 @@ template.innerHTML = `
   </style>
   <div class="container">
     <h1>Slot Game</h1>
-    <main>
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </main>
+    <main></main>
     <button>Spin</button>
   </div>
 `
