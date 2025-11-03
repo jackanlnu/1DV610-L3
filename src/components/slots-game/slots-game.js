@@ -22,6 +22,9 @@ customElements.define('slots-game',
       for (let i = 0; i < 3; i++) {
         this.#slots.push(document.createElement('slots-slot')) 
       }
+      for (let i = 0; i < 3; i++) {
+        this.#main.appendChild(this.#slots[i])
+      }
     }
 
     connectedCallback(){
