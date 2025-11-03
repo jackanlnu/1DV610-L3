@@ -7,6 +7,7 @@ const helper = new arrayHelper();
 customElements.define('slots-game',
   class extends HTMLElement {
     #button
+    #main
 
     #slots = []
     constructor () {
@@ -16,6 +17,7 @@ customElements.define('slots-game',
         .appendChild(template.content.cloneNode(true))
 
       this.#button = this.shadowRoot.querySelector('button')
+      this.#main = this.shadowRoot.querySelector('main')
 
       for (let i = 0; i < 3; i++) {
         this.#slots.push(document.createElement('slots-slot')) 
