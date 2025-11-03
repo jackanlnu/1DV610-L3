@@ -1,3 +1,5 @@
+import { template } from "./slots-game-template.js";
+
 customElements.define('slots-slot',
   class extends HTMLElement {
     constructor () {
