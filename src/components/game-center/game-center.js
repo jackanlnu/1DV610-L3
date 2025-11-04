@@ -1,15 +1,10 @@
 import '../slots-game/index.js'
-import '../game-center-home/index.js'
 
 import { template } from './game-center-template.js'
 
 customElements.define('game-center',
   class extends HTMLElement {
-    #container
-    #returnHomeButton
-    #userNameDisplay
     #coinsDisplay
-    #main
 
     constructor () {
       super()
@@ -17,75 +12,14 @@ customElements.define('game-center',
       this.attachShadow({ mode: 'open' })
         .appendChild(template.content.cloneNode(true))
 
-      this.#container = this.shadowRoot.querySelector('.container')
-      this.#returnHomeButton = this.shadowRoot.getElementById('returnHomeButton')
-      this.#userNameDisplay = this.shadowRoot.querySelector('.userNameDisplay')
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
-      this.#main = this.shadowRoot.querySelector('main')
     }
 
     connectedCallback(){
-      if(!localStorage.getItem('game-center-username')) {
-        this.#displayNewUserForm()
-      } else {
-        this.#displayHome()
-      }
-
-      this.#returnHomeButton.addEventListener('click', () => this.#changeDisplay('home'))
-
       if (!localStorage.getItem('game-center-coins')) {
         localStorage.setItem('game-center-coins', JSON.stringify(100))
       }
       this.#updateCoinsDisplay()
-      this.#updateUsernameDisplay()
-    }
-
-    #changeDisplay(destination){
-      this.clearElement(this.#main)
-      switch (destination) {
-        case 'home':
-          this.#displayHome()
-          break;
-
-        case 'slots-game':
-          this.#displaySlotsgame()
-          break;
-      
-        default:
-          break;
-      }
-    }
-
-    #displayNewUserForm(){
-      const newUserForm = document.createElement('form')
-      newUserForm.innerHTML = `
-        <input type="text" name="username">
-        <input type="submit" value="Submit">
-      `
-      newUserForm.addEventListener('submit', (event) => this.#submitNewUsername(event))
-      this.#main.appendChild(newUserForm)
-    }
-
-    #submitNewUsername(event){
-      event.preventDefault()
-      const data = new FormData(event.target)
-      localStorage.setItem('game-center-username', JSON.stringify([...data.entries()][0][1]))
-      this.#updateUsernameDisplay()
-      this.#changeDisplay('home')
-    }
-
-    #displayHome(){
-      this.#returnHomeButton.hidden = true
-      const home = document.createElement('game-center-home')
-      home.addEventListener('changeDisplay', (event) => this.#changeDisplay(event.detail.displayElement))
-      this.#main.appendChild(home)
-    }
-
-    #displaySlotsgame(){
-      this.#returnHomeButton.hidden = false
-      const slotsGame = document.createElement('slots-game')
-      slotsGame.addEventListener('win', (event) => this.#addWin(event))
-      this.#main.appendChild(slotsGame)
     }
 
     #addWin(event){
@@ -95,16 +29,6 @@ customElements.define('game-center',
 
     #updateCoinsDisplay(){
       this.#coinsDisplay.textContent = 'Coins: ' + localStorage.getItem('game-center-coins')
-    }
-
-    #updateUsernameDisplay(){
-      this.#userNameDisplay.textContent = JSON.parse(localStorage.getItem('game-center-username'))
-    }
-
-    clearElement (element) {
-      while (element.firstChild) {
-        element.removeChild(element.lastChild)
-      }
     }
   }
 )
