@@ -15,6 +15,10 @@ customElements.define('game-center',
         .appendChild(template.content.cloneNode(true))
 
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
+      this.#main = this.shadowRoot.querySelector('main')
+      this.#slotsGame = document.createElement('slots-game')
+
+      this.#main.appendChild(this.#slotsGame)
     }
 
     connectedCallback(){
