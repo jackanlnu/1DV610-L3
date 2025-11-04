@@ -62,9 +62,7 @@ customElements.define('slots-game',
       if(this.#slots[0].getValue() === this.#slots[1].getValue() && this.#slots[1].getValue()  === this.#slots[2].getValue()){
         return true
       }
-      else{
-        return false
-      }
+      return false
     }
   }
 )
