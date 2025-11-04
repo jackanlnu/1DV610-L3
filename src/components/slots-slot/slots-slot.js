@@ -23,10 +23,14 @@ customElements.define('slots-slot',
       return this.#value
     }
 
-    
     spin(){
       this.#value = helper.getRandom(this.#odds)
       this.#slot.innerHTML = this.#value
+    }
+
+    resetValue(){
+      this.#value = undefined
+      this.#slot.innerHTML = ''
     }
   }
 )
