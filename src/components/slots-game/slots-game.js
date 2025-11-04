@@ -36,7 +36,7 @@ customElements.define('slots-game',
     #spinSlots(){
       this.#button.disabled = true;
       for (let i = 0; i < this.#slots.length; i++) {
-        this.#slots[i].innerHTML = ''
+        this.#slots[i].resetValue()
       }
       for (let i = 0; i < this.#slots.length; i++) {
         setTimeout(() => {
