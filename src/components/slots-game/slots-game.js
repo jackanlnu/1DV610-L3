@@ -1,5 +1,7 @@
 import { arrayHelper} from "../../arrayHelper/index.js";
 
+import "../slots-slot/index.js"
+
 import { template } from "./slots-game-template.js";
 
 const helper = new arrayHelper();
@@ -38,7 +40,7 @@ customElements.define('slots-game',
       }
       for (let i = 0; i < this.#slots.length; i++) {
         setTimeout(() => {
-          this.#slots[i].innerHTML = helper.getRandom(this.#slotDisplayItems)
+          this.#slots[i].spin()
           if (i === this.#slots.length - 1) {
             this.#button.disabled = false
             if(this.#checkIfWin()){

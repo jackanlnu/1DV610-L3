@@ -1,4 +1,4 @@
-import { template } from "./slots-game-template.js";
+import { template } from "./slots-slot-template.js";
 
 import { arrayHelper} from "../../arrayHelper/index.js";
 const helper = new arrayHelper();
