@@ -59,7 +59,7 @@ customElements.define('slots-game',
     }
 
     #checkIfWin(){
-      if(this.#slots[0].innerHTML === this.#slots[1].innerHTML && this.#slots[1].innerHTML  === this.#slots[2].innerHTML){
+      if(this.#slots[0].getValue() === this.#slots[1].getValue() && this.#slots[1].getValue()  === this.#slots[2].getValue()){
         return true
       }
       else{
