@@ -5,6 +5,7 @@ import { template } from './game-center-template.js'
 customElements.define('game-center',
   class extends HTMLElement {
     #coinsDisplay
+    #main
     #slotsGame
 
     constructor () {
