@@ -38,13 +38,7 @@ customElements.define('slots-game',
           if (i === this.#slots.length - 1) {
             this.#button.disabled = false
             if(this.#checkIfWin()){
-              this.dispatchEvent(new CustomEvent('win', {
-                bubbles: true,
-                composed: true,
-                detail: {
-                  amount: 100
-                }
-              }))
+              this.#sendWinEvent()
             }
           }
         }
@@ -57,6 +51,16 @@ customElements.define('slots-game',
         return true
       }
       return false
+    }
+
+    #sendWinEvent(){
+      this.dispatchEvent(new CustomEvent('win', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          amount: 100
+        }
+      }))
     }
   }
 )
