@@ -17,8 +17,6 @@ customElements.define('game-center',
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
       this.#main = this.shadowRoot.querySelector('main')
       this.#slotsGame = document.createElement('slots-game')
-
-      this.#main.appendChild(this.#slotsGame)
     }
 
     connectedCallback(){
@@ -26,6 +24,9 @@ customElements.define('game-center',
         localStorage.setItem('game-center-coins', JSON.stringify(100))
       }
       this.#updateCoinsDisplay()
+
+      this.#main.appendChild(this.#slotsGame)
+      this.#slotsGame.addEventListener('win', (event) => this.#addWin(event))
     }
 
     #addWin(event){
