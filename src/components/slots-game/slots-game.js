@@ -1,10 +1,6 @@
-import { arrayHelper} from "../../arrayHelper/index.js";
-
 import "../slots-slot/index.js"
 
 import { template } from "./slots-game-template.js";
-
-const helper = new arrayHelper();
 
 customElements.define('slots-game',
   class extends HTMLElement {
