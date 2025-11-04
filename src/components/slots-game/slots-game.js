@@ -20,16 +20,14 @@ customElements.define('slots-game',
 
       this.#button = this.shadowRoot.querySelector('button')
       this.#main = this.shadowRoot.querySelector('main')
-
-      for (let i = 0; i < 3; i++) {
-        this.#slots.push(document.createElement('slots-slot')) 
-      }
-      for (let i = 0; i < 3; i++) {
-        this.#main.appendChild(this.#slots[i])
-      }
     }
 
     connectedCallback(){
+      for (let i = 0; i < 3; i++) {
+        this.#slots.push(document.createElement('slots-slot')) 
+        this.#main.appendChild(this.#slots[i])
+      }
+
       this.#button.addEventListener('click', () => this.#spinSlots())
     }
 
