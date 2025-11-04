@@ -25,7 +25,8 @@ customElements.define('slots-slot',
 
     
     spin(){
-      this.#slot.innerHTML = helper.getRandom(this.#odds)
+      this.#value = helper.getRandom(this.#odds)
+      this.#slot.innerHTML = this.#value
     }
   }
 )
