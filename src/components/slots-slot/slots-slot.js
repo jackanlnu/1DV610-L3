@@ -7,6 +7,7 @@ customElements.define('slots-slot',
   class extends HTMLElement {
     #slot
     #odds
+    #value
     constructor () {
       super()
 
