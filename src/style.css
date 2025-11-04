@@ -3,6 +3,5 @@ body{
   justify-content: center;
   margin: 3vw 0;
   background-color: aqua;
-  width: 100vw;
-  height: 60vh;
+  height: fit-content;
 }
