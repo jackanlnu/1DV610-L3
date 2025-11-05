@@ -20,7 +20,7 @@ template.innerHTML = `
     }
     .coinsDisplay{
       margin: 0;
-      font-size: 10vw;
+      font-size: 3vw;
     }
     main{
       width: 80%;
