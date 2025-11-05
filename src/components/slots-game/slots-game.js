@@ -64,12 +64,12 @@ customElements.define('slots-game',
       }
     }
 
-    #sendWinEvent(){
+    #sendWinEvent(winAmonut){
       this.dispatchEvent(new CustomEvent('win', {
         bubbles: true,
         composed: true,
         detail: {
-          amount: 100
+          amount: winAmonut
         }
       }))
     }
