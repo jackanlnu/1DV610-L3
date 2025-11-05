@@ -8,6 +8,7 @@ customElements.define('slots-slot',
     #slot
     #odds
     #value
+    #intervalId
     constructor () {
       super()
 
