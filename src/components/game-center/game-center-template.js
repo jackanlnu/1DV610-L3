@@ -18,6 +18,10 @@ template.innerHTML = `
       flex-direction: row;
       gap: 2vw;
     }
+    .coinsDisplay{
+      margin: 0;
+      font-size: 10vw;
+    }
     main{
       width: 80%;
       height: 70%;
