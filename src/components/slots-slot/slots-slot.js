@@ -35,6 +35,7 @@ customElements.define('slots-slot',
       this.#intervalId = null
       this.#value = helper.getRandom(this.#odds)
       this.#slot.innerHTML = this.#value
+      this.#slot.style.backgroundColor = '#04c34e'
     }
 
     resetValue(){
