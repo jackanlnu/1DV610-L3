@@ -55,6 +55,18 @@ customElements.define('slots-game',
       return false
     }
 
+    #getWinAmonut(){
+      switch(this.#slots[0].getValue()){
+        case 1:
+          console.log('100')
+          return 100
+
+        case 2 || 3:
+          console.log('100')
+          return 250
+      }
+    }
+
     #sendWinEvent(){
       this.dispatchEvent(new CustomEvent('win', {
         bubbles: true,
