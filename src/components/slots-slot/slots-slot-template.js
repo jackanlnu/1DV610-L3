@@ -6,7 +6,6 @@ template.innerHTML = `
       display: flex;
       width: 1em;
       height: 1em;
-      background-color: grey;
       font-size: 10vw;
       align-items: center;
       justify-content: center;
