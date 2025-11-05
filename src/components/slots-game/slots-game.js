@@ -27,23 +27,20 @@ customElements.define('slots-game',
       this.#button.addEventListener('click', () => this.#spinSlots())
     }
 
-    #spinSlots(){
+    async #spinSlots(){
       this.#button.disabled = true;
       for (let i = 0; i < this.#slots.length; i++) {
         this.#slots[i].resetValue()
         this.#slots[i].spin()
       }
+      await this.#setDelay(700)
       for (let i = 0; i < this.#slots.length; i++) {
-        setTimeout(() => {
-          this.#slots[i].stop()
-          if (i === this.#slots.length - 1) {
-            this.#button.disabled = false
-            if(this.#checkIfWin()){
-              this.#sendWinEvent()
-            }
-          }
-        }
-        , 1000 * (i + 1));
+        await this.#setDelay(1000)
+        this.#slots[i].stop()
+      }
+      this.#button.disabled = false
+      if(this.#checkIfWin()){
+        this.#sendWinEvent()
       }
     }
 
