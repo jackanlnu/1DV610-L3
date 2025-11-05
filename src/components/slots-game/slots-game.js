@@ -47,6 +47,10 @@ customElements.define('slots-game',
       }
     }
 
+    #setDelay(miliseconds) {
+      return new Promise(resolve => { setTimeout(resolve, miliseconds) })
+    } 
+
     #checkIfWin(){
       if(this.#slots[0].getValue() === this.#slots[1].getValue() && this.#slots[1].getValue()  === this.#slots[2].getValue()){
         return true
