@@ -41,6 +41,7 @@ customElements.define('slots-slot',
     resetValue(){
       this.#value = undefined
       this.#slot.innerHTML = ''
+      this.#slot.style.backgroundColor = 'gray'
     }
   }
 )
