@@ -40,7 +40,7 @@ customElements.define('slots-game',
       }
       this.#button.disabled = false
       if(this.#checkIfWin()){
-        this.#sendWinEvent()
+        this.#sendWinEvent(this.#getWinAmonut())
       }
     }
 
@@ -58,11 +58,8 @@ customElements.define('slots-game',
     #getWinAmonut(){
       switch(this.#slots[0].getValue()){
         case 1:
-          console.log('100')
           return 100
-
         case 2 || 3:
-          console.log('100')
           return 250
       }
     }

@@ -17,7 +17,7 @@ customElements.define('slots-slot',
 
       this.#slot = this.shadowRoot.getElementById('slot')
 
-      this.#odds = [1, 1, 1, 2, 3,]
+      this.#odds = [1, 1, 1, 2, 3]
     }
 
     getValue(){
