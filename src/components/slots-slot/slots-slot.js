@@ -30,6 +30,13 @@ customElements.define('slots-slot',
       }, 300)
     }
 
+    stop(){
+      clearInterval(intervalId)
+      intervalId = null
+      this.#value = helper.getRandom(this.#odds)
+      this.#slot.innerHTML = this.#value
+    }
+
     resetValue(){
       this.#value = undefined
       this.#slot.innerHTML = ''
