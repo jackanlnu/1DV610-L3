@@ -31,10 +31,11 @@ customElements.define('slots-game',
       this.#button.disabled = true;
       for (let i = 0; i < this.#slots.length; i++) {
         this.#slots[i].resetValue()
+        this.#slots[i].spin()
       }
       for (let i = 0; i < this.#slots.length; i++) {
         setTimeout(() => {
-          this.#slots[i].spin()
+          this.#slots[i].stop()
           if (i === this.#slots.length - 1) {
             this.#button.disabled = false
             if(this.#checkIfWin()){
