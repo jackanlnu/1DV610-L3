@@ -31,8 +31,8 @@ customElements.define('slots-slot',
     }
 
     stop(){
-      clearInterval(intervalId)
-      intervalId = null
+      clearInterval(this.#intervalId)
+      this.#intervalId = null
       this.#value = helper.getRandom(this.#odds)
       this.#slot.innerHTML = this.#value
     }
