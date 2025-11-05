@@ -25,8 +25,9 @@ customElements.define('slots-slot',
     }
 
     spin(){
-      this.#value = helper.getRandom(this.#odds)
-      this.#slot.innerHTML = this.#value
+      this.#intervalId = setInterval(() => {
+        this.#slot.innerHTML = helper.getRandom(this.#odds)
+      }, 300)
     }
 
     resetValue(){
