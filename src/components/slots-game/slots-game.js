@@ -30,7 +30,7 @@ customElements.define('slots-game',
     async #spinSlots(){
       this.#button.disabled = true;
       for (let i = 0; i < this.#slots.length; i++) {
-        this.#slots[i].resetValue()
+        this.#slots[i].reset()
         this.#slots[i].spin()
       }
       await this.#setDelay(700)
