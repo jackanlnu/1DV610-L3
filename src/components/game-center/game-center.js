@@ -16,6 +16,7 @@ customElements.define('game-center',
 
       this.#coinsDisplay = this.shadowRoot.querySelector('.coinsDisplay')
       this.#main = this.shadowRoot.querySelector('main')
+      
       this.#slotsGame = document.createElement('slots-game')
     }
 
