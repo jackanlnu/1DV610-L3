@@ -9,6 +9,7 @@ customElements.define('slots-slot',
     #odds
     #value
     #intervalId
+
     constructor () {
       super()
 
@@ -38,7 +39,7 @@ customElements.define('slots-slot',
       this.#slot.style.backgroundColor = '#04c34e'
     }
 
-    resetValue(){
+    reset(){
       this.#value = undefined
       this.#slot.innerHTML = ''
       this.#slot.style.backgroundColor = 'gray'
