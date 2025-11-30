@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/jackanlnu/1DV610-L3/issues"
   },
-  "homepage": "https://github.com/jackanlnu/1DV610-L3#readme"
+  "homepage": "https://github.com/jackanlnu/1DV610-L3#readme",
+  "dependencies": {
+    "jest": "^30.2.0"
+  }
 }
