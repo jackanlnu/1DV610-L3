@@ -1,6 +1,7 @@
-import { gameCenter } from '../src/components/game-center/game-center.js'
+import '../src/components/game-center/index.js'
 
 describe('game-center class, test suite', () => {
+  let gameCenter
 
   beforeEach(() => {
     localStorage.clear();
