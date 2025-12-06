@@ -22,12 +22,12 @@ customElements.define('game-center',
 
     connectedCallback(){
       if (!localStorage.getItem('game-center-coins')) {
-        localStorage.setItem('game-center-coins', JSON.stringify(100))
+        localStorage.setItem('game-center-coins', JSON.stringify(0))
       }
       this.#updateCoinsDisplay()
 
       this.#main.appendChild(this.#slotsGame)
-      this.#slotsGame.addEventListener('win', (event) => this.#addWin(event))
+      this.addEventListener('win', (event) => this.#addWin(event))
     }
 
     #addWin(event){
