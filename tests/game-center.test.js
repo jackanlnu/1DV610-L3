@@ -15,13 +15,12 @@ describe('game-center class, test suite', () => {
 
   test('should add coins if win event is dispatched', () => {
     const winEvent = new CustomEvent('win', {
-      detail: { amount: 50 },
+      detail: { amount: 100 },
       bubbles: true,
       composed: true
-    });
-    
+    })
     gameCenter.dispatchEvent(winEvent)
     
-    expect(localStorage.getItem('game-center-coins')).toBe('150')
+    expect(localStorage.getItem('game-center-coins')).toBe('100')
   })
 })
