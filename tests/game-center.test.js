@@ -4,8 +4,7 @@ describe('game-center class, test suite', () => {
   let gameCenter
 
   beforeEach(() => {
-    localStorage.clear();
-    localStorage.setItem('game-center-coins', JSON.stringify(100))
+    localStorage.setItem('game-center-coins', JSON.stringify(0))
     gameCenter = document.createElement('game-center')
     document.body.appendChild(gameCenter)
   })
