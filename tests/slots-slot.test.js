@@ -4,7 +4,11 @@ describe('slots-slot class, test suite', () => {
   let slot
 
   beforeEach(() => {
-    gameCenter = document.createElement('game-center')
-    document.body.appendChild(gameCenter)
+    slot = document.createElement('slots-slot')
+    document.body.appendChild(slot)
+  })
+
+  afterEach(() => {
+    document.body.removeChild(slot)
   })
 })
