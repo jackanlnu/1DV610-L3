@@ -11,4 +11,8 @@ describe('slots-game class, test suite', () => {
     slotsGame = document.createElement('slots-game')
     document.body.appendChild(slotsGame)
   })
+
+  afterEach(() => {
+    document.body.removeChild(slotsGame)
+  })
 })
