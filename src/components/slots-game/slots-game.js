@@ -59,7 +59,8 @@ customElements.define('slots-game',
       switch(this.#slots[0].getValue()){
         case 1:
           return 100
-        case 2 || 3:
+        case 2:
+        case 3:
           return 250
       }
     }
