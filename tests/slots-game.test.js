@@ -2,6 +2,8 @@ import { jest } from '@jest/globals'
 
 import '../src/components/slots-game/index.js'
 
+jest.useFakeTimers('modern')
+
 jest.mock('../src/components/slots-slot/index.js', () => {
   customElements.define('slots-slot', class extends HTMLElement {
     #value = 1
@@ -35,8 +37,11 @@ describe('slots-game class, test suite', () => {
     
     const button = slotsGame.shadowRoot.querySelector('button')
     button.click()
-    await new Promise(resolve => setTimeout(resolve, 5000))
+
+    await jest.advanceTimersByTimeAsync(3700)
+
+    await Promise.resolve()
     
     expect(winListener).toHaveBeenCalled()
-  }, 7000)
+  })
 })
