@@ -12,7 +12,7 @@ describe('game-center class, test suite', () => {
     document.body.removeChild(gameCenter)
   })
 
-  test('should add coins if win event is dispatched', () => {
+  test('should Add Coins if Win Event Is Dispatched', () => {
     const winEvent = new CustomEvent('win', {
       detail: { amount: 100 },
       bubbles: true,
@@ -21,5 +21,18 @@ describe('game-center class, test suite', () => {
     gameCenter.dispatchEvent(winEvent)
     
     expect(localStorage.getItem('game-center-coins')).toBe('100')
+  })
+
+  test('should Update Coin Display if The User Has Earned More Coins', () => {
+    const originalCoinsDisplay = gameCenter.shadowRoot.querySelector('.coinsDisplay')
+
+    const winEvent = new CustomEvent('win', {
+      detail: { amount: 100 },
+      bubbles: true,
+      composed: true
+    })
+    gameCenter.dispatchEvent(winEvent)
+
+    expect(gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML).not.toBe(originalCoinsDisplay.innerHTML)
   })
 })
