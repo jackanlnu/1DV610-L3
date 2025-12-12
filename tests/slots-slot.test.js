@@ -12,7 +12,7 @@ describe('slots-slot class, test suite', () => {
     document.body.removeChild(slot)
   })
 
-  test('stop Should Set A Valid Value ', () => {
+  test('stop Should Set A Valid Value', () => {
     slot.stop()
     expect(slot.getValue()).toBe( 1 || 2 || 3 )
   })
