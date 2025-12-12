@@ -16,4 +16,9 @@ describe('slots-slot class, test suite', () => {
     slot.stop()
     expect(slot.getValue()).toBe( 1 || 2 || 3 )
   })
+
+  test('reset Should Set Value To Undefined', () => {
+    slot.reset()
+    expect(slot.getValue()).toBe(undefined)
+  })
 })
