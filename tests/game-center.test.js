@@ -29,7 +29,7 @@ describe('game-center class, test suite', () => {
   })
 
   test('should Update Coin Display if The User Has Earned More Coins', () => {
-    const originalCoinsDisplay = gameCenter.shadowRoot.querySelector('.coinsDisplay')
+    const originalCoinsDisplay = gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML
 
     const winEvent = new CustomEvent('win', {
       detail: { amount: 100 },
@@ -38,6 +38,6 @@ describe('game-center class, test suite', () => {
     })
     gameCenter.dispatchEvent(winEvent)
 
-    expect(gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML).not.toBe(originalCoinsDisplay.innerHTML)
+    expect(gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML).not.toBe(originalCoinsDisplay)
   })
 })
