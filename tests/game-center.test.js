@@ -12,6 +12,11 @@ describe('game-center class, test suite', () => {
     document.body.removeChild(gameCenter)
   })
 
+  test('should Create game-center-coins In localStorage', () => {
+    console.log(localStorage.getItem('game-center-coins'))
+    expect(localStorage.getItem('game-center-coins')).not.toBeFalsy()
+  })
+
   test('should Add Coins if Win Event Is Dispatched', () => {
     const winEvent = new CustomEvent('win', {
       detail: { amount: 100 },
