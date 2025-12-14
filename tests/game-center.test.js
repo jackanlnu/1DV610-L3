@@ -28,6 +28,13 @@ describe('game-center class, test suite', () => {
     expect(localStorage.getItem('game-center-coins')).toBe('100')
   })
 
+  test('coinsDisplay should Display The Amount Of Coins The User Has', () => {
+    const coinsDisplay = gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML
+    const coins = localStorage.getItem('game-center-coins')
+
+    expect(coinsDisplay).toBe('Coins: ' + coins)
+  })
+
   test('should Update Coin Display if The User Has Earned More Coins', () => {
     const originalCoinsDisplay = gameCenter.shadowRoot.querySelector('.coinsDisplay').innerHTML
 
