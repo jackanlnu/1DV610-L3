@@ -51,19 +51,33 @@ Ovanför så finns en bild på en del av game-center koden. Där kan man se att 
 
 När det kommer till "Horizontal Formatting" har jag för det mesta följt det. Det är dock vissa rader som kanske är lite för långa som skulle kortas ner.
 
-### Kapitel 6 - Objects and Data Structures --------------------------------- FIXA ---------------------------------
+### Kapitel 6 - Objects and Data Structures 
 Intressant kapitel som pratar om "encapsulating" och "Law of Demeter" vilket då är om vad för data som ska gömmas och vilka klasser/objekt som ska ha tillgång  till dem. Jag har försökt till det bästa av mina kunskaper att följa dessa koncept och tycker personligen att jag har fått till det på ett relativt bra sätt.
 
 T.ex. bara ``game-center`` har tillgång till ``slotsGame`` och bara ``slotsGame`` har tillgång till ``slots`` för att de jobbar tillsammans mycket.
 
-### Kapitel 7 - Error Handling --------------------------------- FIXA ---------------------------------
+
+↓slots-game som ligger i game-center↓
+
+[![slotsGameVariable](imgs/slotsGameVariable.png)](imgs/slotsGameVariable.png)
+
+↓slots som ligger i slots-game↓
+
+[![slotsVariable](imgs/slotsVariable.png)](imgs/slotsVariable.png)
+
+### Kapitel 7 - Error Handling
 Väldigt bra kapitel. Min kod använder sig inte av någon "Error Handling" eller "Try-catch" alls vilket inte är bra men jag är osäker på var jag skulle lägga in det. Troligtvis i en funktion som tar en parameter men allting är ganska hårdkodat så det känns inte så nödvändigt. Men jag skulle ändå ha velat lagt till hantering av error, dock på grund av tidsbrist så hände det inte.
 
-### Kapitel 8 - Boundaries --------------------------------- FIXA ---------------------------------
-Bra kapitel på hur man ska hantera "Tredje part" kod/ kod som någon annan håller i. Den enda "Tredje part" kod som jag använder är min egen arrayhelper och jag tycker jag hanterar den bra. I boken så står det om att skapa en klass som då tar hand om en "Tredje part" kod men jag tycker att det inte är nödvändigt när det kommer till arrayhelpern.
+### Kapitel 8 - Boundaries 
+Bra kapitel på hur man ska hantera "Tredje part" kod/ kod som någon annan håller i. Den enda "Tredje part" kod som jag använder är min egen arrayhelper och jag tycker jag hanterar den bra. I boken så står det om att skapa en klass som då tar hand om en "Tredje part" kod men jag tycker att det inte är nödvändigt när det kommer till arrayhelpern. Jag har därför valt att inte införa det i min kod men jag förstår vikten av att separera kod som någon annan har skrivit, med t.ex en adapter som gör att en förändring i "Tredje part" koden bara påverkar adaptern och inte resten av systemet.
 
-### Kapitel 9 - Unit Tests --------------------------------- FIXA ---------------------------------
-Kapitlet tar upp många bra saker om testkod och jag känner att den har gett mig mycket kunskap om hur man ska på bra sätt göra automatiska tester. Min kod har dock inte automatiska tester, Dock vet jag inte hur jag skulle införa dessa tester eftersom t.ex "slots-game" har med tur att göra så att kolla att allt går rätt när man vinner känner jag att det är svårt att testa. Men jag skulle ändå ha velat lägga till automatiska tester med t.ex jest.
+### Kapitel 9 - Unit Tests
+Kapitlet tar upp många bra saker om testkod och jag känner att den har gett mig mycket kunskap om hur man ska på bra sätt göra automatiska tester. 
+Jag har då lagt till automatiska tester till koden. Det var ganska svårt att göra dem på grund av att många av funktionerna är privata. Men i slutändan så är jag ganska nöjd med de tester jag har gjort. Dock var det extremt svårt att göra tester till slots-game klassen eftersom alla funktioner är privata och att de använder sig av ``timeout`` och ``async``/``await``.
+
+↓Ett test för game-center klassen↓
+
+[![gameCenterTest](imgs/gameCenterTest.png)](imgs/gameCenterTest.png)
 
 ### Kapitel 10 - Classes
 Bra kapitel. Känns som kapitel 3 med liknande regler, Så kapitel 10 och 3 går hand i hand enligt mig. Så när jag gör klasser så tänker jag på många av de reglerna som när jag håller på med funktioner, T.ex "Small!" eller "Do One Thing". Tycker att jag har följt detta kapitlet bra när jag har skrivit min kod och kommer inte på något just nu som jag kan förbättra enligt detta kapitlet.
