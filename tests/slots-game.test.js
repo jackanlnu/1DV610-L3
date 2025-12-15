@@ -1,4 +1,4 @@
-import { jest } from '@jest/globals'
+import { expect, jest } from '@jest/globals'
 
 jest.useFakeTimers('modern')
 
@@ -33,15 +33,13 @@ describe('slots-game class, test suite', () => {
   })
 
   test('should Dispatch Win Event if All Slots Have Same Number', async () => {
-    const winPromise = new Promise(resolve => {
-      slotsGame.addEventListener('win', e => resolve(e), { once: true })
-    })
-    
+    const winListener = jest.fn()
+    slotsGame.addEventListener('win', winListener)
+
     slotsGame.shadowRoot.querySelector('button').click()
 
     await jest.advanceTimersByTimeAsync(4000)
-    
-    const event = await winPromise
-    expect(event).toBeDefined()
-  }, 10000)
+
+    expect(winListener).toHaveBeenCalled()
+  })
 })
